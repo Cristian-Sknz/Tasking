@@ -1,5 +1,6 @@
 .dashboard {
     width: 100%;
+    max-width: 709px;
 }
 
 .taskboard {

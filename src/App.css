@@ -29,6 +29,7 @@
   flex-direction: column;
   width: 90%;
   height: 100%;
+  align-items: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -36,6 +37,7 @@
     width: 80%;
     flex-direction: row;
     height: auto;
+    justify-content: center;
   }
 
 }

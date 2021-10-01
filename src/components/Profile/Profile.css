@@ -1,3 +1,8 @@
+.user-profile {
+    width: 100%;
+    max-width: 252px;
+}
+
 .profile {
     display: flex;
     flex-direction: column;
