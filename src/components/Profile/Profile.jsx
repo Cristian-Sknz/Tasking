@@ -10,7 +10,7 @@ class Profile extends Component {
 
   constructor() {
     super();
-    this.state = { modal: true }
+    this.state = { modal: false }
   }
 
   handleModal() {

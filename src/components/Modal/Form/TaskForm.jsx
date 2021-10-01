@@ -24,7 +24,7 @@ class TaskForm extends Component {
         createdDate: moment().toISOString(),
         dateTime: moment(date).toISOString(),
         hours: hours,
-      })
+      }).toTask()
     );
 
     this.props.onSubmit();
