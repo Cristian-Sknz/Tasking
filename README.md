@@ -6,6 +6,8 @@ Este projeto foi mais um de meus experimentos que eu faço para praticar e apren
 Este projeto foi feito com ReactJS, CSS e Javascript, você pode agendar suas tarefas em 4 categorias (Trabalho, Estudo, Jogos e Lazer), você define quanto tempo a tarefa irá durar e qual a data que ela vai iniciar (1 semana depois do dia atual).
 
 ## Features
+### Hospedado no Gihub Pages!
+[https://cristian-sknz.github.io/Tasking/](https://cristian-sknz.github.io/Tasking/)
 
 ### Layout Moderno
 Decidi fazer um layout de aplicativo moderno, pois é um projeto é pequeno e encaixaria muito bem no tema da pagina.
