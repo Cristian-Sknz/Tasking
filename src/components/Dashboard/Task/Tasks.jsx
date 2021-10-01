@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import TaskCard from "./TaskCard";
-import TaskManager from "../../../lib/task";
+import React, { Component } from 'react';
+import TaskCard from './TaskCard';
+import TaskManager from '../../../lib/task';
 
-import "./Task.css";
+import './Task.css';
 
 export const TaskContext = React.createContext();
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 
 import TaskCard from '../Dashboard/Task/TaskCard';
 import TaskForm from './Form/TaskForm';
@@ -12,24 +11,12 @@ class AddTaskModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      preview: TaskManager.toStorageTask({
-        title: "Preview",
-        category: 0,
-        createdDate: moment().toISOString(),
-        dateTime: moment().add(3, "hours").toISOString(),
-        hours: "01:00",
-      }),
+      preview: TaskManager.createPreview()
     };
   }
 
   setPreview(title, category, dateTime, hours) {
-    let preview = TaskManager.toStorageTask({
-      title: title,
-      category: category,
-      createdDate: moment().toISOString(),
-      dateTime: dateTime,
-      hours: hours,
-    });
+    let preview = TaskManager.createInMemoryTask(title, category, dateTime, hours);
     this.setState({ preview: preview });
   }
 
@@ -43,7 +30,6 @@ class AddTaskModal extends Component {
           <div className="taskmodal-form">
             <TaskForm setPreview={this.setPreview.bind(this)} onSubmit={this.props.onClick}/>
           </div>
-
           <div className="taskmodal-preview">
             <TaskCard data={this.state.preview} />
           </div>

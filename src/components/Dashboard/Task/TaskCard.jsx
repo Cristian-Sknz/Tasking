@@ -1,21 +1,22 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component } from "react";
-import TextFit from "react-textfit";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component } from 'react';
+import TextFit from 'react-textfit';
 
 class TaskCard extends Component {
+
+  interval;
+
   constructor(props) {
     super(props);
     this.state = {
       duration: props.data.getTimerString(),
-      option: false,
+      option: false
     };
-    this.interval = null;
   }
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      let data = this.props.data;
-      let newDuration = data.getTimerString();
+      let newDuration = this.props.data.getTimerString();
       if (this.state.duration !== newDuration) {
         this.setState({ ...this.state, duration: newDuration});
       }
@@ -31,9 +32,8 @@ class TaskCard extends Component {
   }
 
   componentWillUnmount() {
-    if (!this.interval) {
+    if (!this.interval)
       clearInterval(this.interval);
-    }
   }
 
   handleTaskOptions() {
@@ -67,8 +67,7 @@ class TaskCard extends Component {
               className="time-remaining"
               mode="single"
               forceSingleModeWidth={true}
-              max={45}
-            >
+              max={45}>
               <h2>{this.state.duration}</h2>
             </TextFit>
             <div className={`task-state ${this.props?.data.state[0]}`}>{this.props?.data.state[1]}</div>

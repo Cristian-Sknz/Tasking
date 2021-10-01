@@ -1,7 +1,7 @@
-import APPStorage from "./storage";
-import data from "../data/data.json";
-import moment from "moment";
-import Category from "./category";
+import APPStorage from './storage';
+import data from '../data/data.json';
+import moment from 'moment';
+import Category from './category';
 
 class TaskManager {
 
@@ -73,6 +73,26 @@ class TaskManager {
 
   static toStorageTask(task) {
     return new StorageTask(task);
+  }
+
+  static createInMemoryTask(title, category, dateTime, hours) {
+    return TaskManager.toStorageTask({
+      title: title,
+      category: category,
+      createdDate: moment().toISOString(),
+      dateTime: moment().add(3, "hours").toISOString(),
+      hours: hours,
+    });
+  }
+
+  static createPreview() {
+    return TaskManager.toStorageTask({
+      title: "Preview",
+      category: 0,
+      createdDate: moment().toISOString(),
+      dateTime: moment().add(3, "hours").toISOString(),
+      hours: "01:00",
+    });
   }
 
   static async storageAll(tasks) {

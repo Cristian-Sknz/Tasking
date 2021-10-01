@@ -1,15 +1,15 @@
 import APPStorage from './storage';
 
 class ImageStorage {
-    static async getImage(name) {
-        return APPStorage.get(name);
-    }
+  static async getImage(name) {
+    return APPStorage.get(name);
+  }
 
-    static async setImage(name, file) {
-        const base64 = await toBase64(file);
-        APPStorage.set(name, base64);
-        return base64;
-    }
+  static async setImage(name, file) {
+    const base64 = await toBase64(file);
+    APPStorage.set(name, base64);
+    return base64;
+  }
 }
 
 function toBase64(file) {

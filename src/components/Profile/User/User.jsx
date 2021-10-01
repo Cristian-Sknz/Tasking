@@ -1,14 +1,17 @@
-import React, { Component } from "react";
-import TextFit from "react-textfit";
-import ContentEditable from "react-contenteditable";
-import ImageStorage from "../../../lib/imageStorage";
-import APPStorage from "../../../lib/storage";
+import React, { Component } from 'react';
+import TextFit from 'react-textfit';
+import ContentEditable from 'react-contenteditable';
+import ImageStorage from '../../../lib/imageStorage';
+import APPStorage from '../../../lib/storage';
 
-import avatar from "./avatar-icon.jpg";
-import "./User.css";
+import avatar from './avatar-icon.jpg';
+import './User.css';
 
 
 class User extends Component {
+
+  imageInput;
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +20,6 @@ class User extends Component {
     };
     
     this.imageInput = React.createRef();
-    this.imagePreview = React.createRef();
   }
 
   componentDidMount() {
@@ -32,7 +34,7 @@ class User extends Component {
         .then((value) => this.setState({ ...this.state, username: e.target.value }));
   }
 
-  handleImageUpload(e) {
+  handleImageUpload() {
     let input = this.imageInput?.current;
     input.click();
   }
@@ -47,7 +49,6 @@ class User extends Component {
       <div className="user">
         <div
           className="user-image"
-          ref={this.imagePreview}
           onClick={this.handleImageUpload.bind(this)}
           style={{ backgroundImage: `url(${this.state.src})` }}
         >
@@ -65,13 +66,11 @@ class User extends Component {
             className="username"
             mode="single"
             forceSingleModeWidth={true}
-            max={55}
-          >
+            max={55}>
             <ContentEditable
               html={this.state.username}
               onChange={this.handleUsername.bind(this)}
-              tagName="h2"
-            ></ContentEditable>
+              tagName="h2"/>
           </TextFit>
         </div>
       </div>

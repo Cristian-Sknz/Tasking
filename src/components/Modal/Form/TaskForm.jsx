@@ -1,7 +1,7 @@
-import moment from "moment";
-import React, { Component } from "react";
-import Category from "../../../lib/category";
-import TaskManager from "../../../lib/task";
+import moment from 'moment';
+import React, { Component } from 'react';
+import Category from '../../../lib/category';
+import TaskManager from '../../../lib/task';
 
 class TaskForm extends Component {
   
@@ -37,16 +37,8 @@ class TaskForm extends Component {
     let date = form[2].value;
     let hours = form[3].value;
 
-    if (!date) {
-      date = moment().add(3, "hours");
-    } else {
-      date = moment(date);
-    }
+    date = (!date) ? moment().add(3, "hours") : moment(date);
     this.props.setPreview(name, category, date, hours);
-  }
-
-  checkDate(date) {
-    moment(date.value);
   }
 
   render() {

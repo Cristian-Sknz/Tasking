@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import User from "./User/User";
-import DashboardFilter from "./DashboardFilter/DashboardFilter";
-import AddTaskButton from "./AddTaskButton/AddTaskButton";
+import React, { Component } from 'react';
+import User from './User/User';
+import DashboardFilter from './DashboardFilter/DashboardFilter';
+import AddTaskButton from './AddTaskButton/AddTaskButton';
 import AddTaskModal from '../Modal/AddTaskModal';
 
 import "./Profile.css";
@@ -26,7 +26,7 @@ class Profile extends Component {
             <DashboardFilter/>
           </div>
           <AddTaskButton onClick={this.handleModal.bind(this)}/>
-          {(this.state.modal) ? <AddTaskModal onClick={this.handleModal.bind(this)}/> : ''}
+          {(this.state.modal) && <AddTaskModal onClick={this.handleModal.bind(this)}/>}
         </div>
       </section>
     );

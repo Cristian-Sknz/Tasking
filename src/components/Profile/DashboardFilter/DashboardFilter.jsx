@@ -19,12 +19,14 @@ class DashboardFilter extends Component {
         return (
         <div className="dashboard-filter">
             <div className="filter-title" onClick={this.handleTitleClick.bind(this)}>Filtrar</div>
-            {(this.state?.active) ?
+            {this.state?.active &&
             <ul className="filter-list">
-                {Category.values().map((category, index) => {
+                {
+                Category.values().map((category, index) => {
                     return <li className="filter-item" key={index}>{category.name}</li>
-                })}
-            </ul> : ''
+                })
+                }
+            </ul>
             }
         </div>);
     }

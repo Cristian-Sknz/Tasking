@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import TextFit from 'react-textfit';
 
 class TaskCard extends Component {
@@ -56,7 +56,8 @@ class TaskCard extends Component {
             <div className="task-createddate" title={new Date()}>
               {
                 "há " + this.props.dataobject.getCreatedDuration().humanize()
-              }</div>
+              }
+            </div>
           </div>
         </div>
       </li>
