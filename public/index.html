@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5746ea" />
+    <meta
+      name="description"
+      content="Um agendador de tarefas feito com React"/>
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+
+    <title>Tasking - Agendador de Tarefas</title>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+        body {
+          display: block;
+          margin: 0px;
+        }
+
+        .js-disabled-background {
+          background-color: #0d1323;
+          font-family: Rubik, monospace;
+          text-align: center;
+          width: 100vw;
+          height: 100vh;
+        }
+
+        .js-disabled {
+          color: white;
+          font-size: 2rem;
+          position: fixed;
+          
+
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+      </style>
+      <div class="js-disabled-background">
+        <div class="js-disabled">
+          You need to enable JavaScript to run this app.
+        </div>
+      </div>
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>

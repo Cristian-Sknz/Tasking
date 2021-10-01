@@ -1,0 +1,120 @@
+.tasks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.task {
+    background: white;
+    color: white;
+    padding-top: 2rem;
+    border-radius: 1.3rem;
+    width: 200px;
+    font-family: 'Rubik';
+    margin: 1rem;
+    box-shadow: 0px 0px 3px black;
+}
+
+.task-category {
+    padding: .3rem;
+    background-color: orchid;
+    display: inline;
+    border-radius: .5rem;
+    font-weight: 300;
+}
+
+.task {
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.option-icon {
+    cursor: pointer;
+}
+
+.options-list {
+    position: absolute;
+    background-color: var(--primary-color);
+    padding: .8rem;
+    right: 0;
+    visibility: hidden;
+}
+
+.options-list.active {
+    border-radius: .3rem;
+    visibility: visible;
+}
+
+.task-option {
+    cursor: pointer;
+}
+
+.task-body {
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.task-title {
+    line-break: anywhere;
+    margin-bottom: .3rem;
+}
+
+.task-state {
+    display: inline-block;
+    padding: .2rem;
+    margin-top: .3rem;
+    border-radius: .5rem;
+}
+
+.task-content {
+    margin: 1rem 0;
+}
+
+.time-remaining {
+    font-size: 4rem;
+}
+
+/* Task colors*/
+.task-state.scheduled {
+    background: rgba(56, 159, 255, 0.47);
+}
+
+.task-state.active {
+    background: rgba(87, 255, 56, 0.47);
+}
+
+.task-state.complete {
+    background: rgba(255, 56, 56, 0.47);
+}
+
+.task.work,.task.work .task-category {
+    background-color: orange;
+    background-image: url('../../../assets/icon-work.svg');
+}
+
+.task.play,.task.play .task-category {
+    background-color: blue;
+    background-image: url('../../../assets/icon-play.svg');
+}
+
+.task.study,.task.study .task-category {
+    background-color: red;
+    background-image: url('../../../assets/icon-study.svg');
+}
+
+.task.selfCare,.task.selfCare .task-category {
+    background-color: yellow;
+    background-image: url('../../../assets/icon-self-care.svg');
+}

@@ -1,0 +1,82 @@
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.task-modal {
+    display: flex;
+}
+
+.modal-close {
+    cursor: pointer;
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+}
+
+.taskmodal-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    background: var(--primary-color);
+    box-shadow: 0px 0px 6px;
+    border: 4px solid white;
+    border-radius: 24px;
+    overflow-y: auto;
+
+    width: 70vw;
+    min-width: 240px;
+    max-width: 320px;
+    max-height: 85vh;
+}
+
+.taskmodal-form {
+    margin: auto;
+}
+
+.task-form > * {
+    margin: 1rem 0;
+}
+
+.task-form {
+    color: white;
+    font-family: 'Rubik';
+}
+
+.task-form input, select {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid orange;
+    border-radius: 0.2rem;
+}
+
+.submit-button {
+    border-style: solid;
+    border-radius: .5rem;
+    background-color: orange;
+    padding: .5rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .modal {
+        height: auto;
+    }
+    .taskmodal-body {
+        flex-direction: row;
+        padding: 30px;
+        width: auto;
+        max-width: 539px;
+    }
+
+    .taskmodal-form {
+        margin-right: 4rem;
+    }
+}
