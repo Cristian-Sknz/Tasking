@@ -1,39 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import TextFit from 'react-textfit';
+import APPTimer from '../../../lib/timing';
 
 class TaskCard extends Component {
-
-  interval;
 
   constructor(props) {
     super(props);
     this.state = {
       duration: props.data.getTimerString(),
-      option: false
+      option: false,
     };
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-      let newDuration = this.props.data.getTimerString();
-      if (this.state.duration !== newDuration) {
-        this.setState({ ...this.state, duration: newDuration});
-      }
-    }, 1000);
-  }
-
-  componentDidUpdate() {
-    let data = this.props.data;
-    if (data.isExpired() && !this.interval) {
-      this.setState({ ...this.state, duration: data.getTimerString() });
-      clearInterval(this.interval);
-    }
+    APPTimer.subscribe(this, () => {
+      this.setState({ ...this.state, duration: this.props.data.getTimerString()});
+    });
   }
 
   componentWillUnmount() {
-    if (!this.interval)
-      clearInterval(this.interval);
+    APPTimer.unsubscribe(this);
   }
 
   handleTaskOptions() {
